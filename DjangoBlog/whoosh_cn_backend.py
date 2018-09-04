@@ -317,7 +317,7 @@ class WhooshSearchBackend(BaseSearchBackend):
                limit_to_registered_models=None, result_class=None, **kwargs):
         if not self.setup_complete:
             self.setup()
-
+        print('********************');
         # A zero length query should return no results.
         if len(query_string) == 0:
             return {
@@ -345,6 +345,7 @@ class WhooshSearchBackend(BaseSearchBackend):
             reverse_counter = 0
 
             for order_by in sort_by:
+
                 if order_by.startswith('-'):
                     reverse_counter += 1
 
