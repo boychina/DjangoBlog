@@ -73,7 +73,10 @@ class ArticleListView(ListView):
 
 class IndexView(ArticleListView):
     def get_queryset_data(self):
-        article_list = Article.objects.filter(type='a', status='p')
+        # article_list = Article.objects.filter(type='a', status='p')
+        article_list = Article.objects.all()
+        print('***************')
+        print(article_list);
         return article_list
 
     def get_queryset_cache_key(self):
